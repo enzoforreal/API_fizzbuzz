@@ -22,8 +22,16 @@ Statistics: Récupère les statistiques sur les requêtes FizzBuzz effectuées.
 URL : /statistics
 Méthode : GET
 Réponse : Un objet JSON contenant les statistiques des requêtes FizzBuzz, comprenant la requête la plus utilisée et le décompte des requêtes effectuées.
+Fonctionnalités du frontend
+Le frontend de l'API FizzBuzz a été développé avec React et offre les fonctionnalités suivantes :
+
+Interface utilisateur conviviale pour interagir avec l'API FizzBuzz.
+Génération et affichage des séquences FizzBuzz à partir des paramètres spécifiés.
+Affichage des statistiques des requêtes FizzBuzz, y compris la requête la plus utilisée et le décompte des requêtes.
+
 Exemple d'utilisation
 Exemple de requête FizzBuzz
+
 URL : http://localhost:8000/fizzbuzz?int1=3&int2=5&limit=15&str1=fizz&str2=buzz
 
 Réponse :
@@ -50,6 +58,7 @@ Copy code
 ]
 }
 Exemple de requête Statistics
+
 URL : http://localhost:8000/statistics
 
 Réponse :
@@ -88,17 +97,26 @@ Copy code
 ]
 }
 
+ Démarrage  la partie front pour tester l'application visuellement :
 
-Environnement de développement
-Pour exécuter localement l'API FizzBuzz, vous devez avoir les prérequis suivants installés :
-Go 1.20 
+Assurez-vous d'avoir Node.js installé sur votre machine.
 
-Roadmap
-Dans les versions futures, je prévois d'ajouter les fonctionnalités suivantes :
+Ouvrez une nouvelle fenêtre de terminal.
 
-Interface utilisateur frontend avec React pour utiliser facilement l'API FizzBuzz.
-Graphiques de statistiques pour une meilleure visualisation des données.
+Accédez au répertoire racine de votre projet frontend (où se trouve le fichier package.json).
 
+Exécutez la commande suivante pour installer les dépendances nécessaires :
+npm install
 
-Auteurs
- RENAUD
+Une fois l'installation terminée, exécutez la commande suivante pour démarrer le serveur de développement :
+npm start
+
+Le serveur de développement démarrera et vous fournira une URL (par exemple, http://localhost:3000).
+
+Ouvrez votre navigateur et accédez à l'URL fournie.
+
+Vous devriez voir l'application frontend FizzBuzz, avec la possibilité d'interagir avec l'API en générant des séquences FizzBuzz et en affichant les statistiques.
+
+Vous pouvez utiliser les formulaires et les boutons de l'interface utilisateur pour effectuer des requêtes FizzBuzz et voir les résultats.
+
+Assurez-vous également que le serveur backend de l'API FizzBuzz est en cours d'exécution pour que l'application frontend puisse communiquer avec l'API.

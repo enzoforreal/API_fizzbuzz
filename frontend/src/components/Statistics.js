@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
-
+import 'chart.js/auto';
 
 const Statistics = () => {
     const [mostUsedRequest, setMostUsedRequest] = useState({});
@@ -12,8 +12,8 @@ const Statistics = () => {
             .get('http://localhost:8000/statistics')
             .then((response) => {
                 const data = response.data;
-                setMostUsedRequest(data.MostUsedRequest); // Utiliser data.MostUsedRequest au lieu de data.mostUsedRequest
-                setRequestCounts(data.RequestCount); // Utiliser data.RequestCount au lieu de data.requestCount
+                setMostUsedRequest(data.MostUsedRequest);
+                setRequestCounts(data.RequestCount);
             })
             .catch((error) => {
                 console.error('Erreur lors de la requête de statistiques :', error);
@@ -25,7 +25,7 @@ const Statistics = () => {
     };
 
     const getRequestCounts = () => {
-        return requestCounts?.map((pair) => pair?.count);
+        return requestCounts?.map((pair) => pair?.Count);
     };
 
     return (
@@ -65,6 +65,7 @@ const Statistics = () => {
                                     stepSize: 1,
                                 },
                             },
+
                         }}
                     />
                 </div>
