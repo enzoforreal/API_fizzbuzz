@@ -91,16 +91,14 @@ func TestFizzBuzzHandler_EmptyParameterValues(t *testing.T) {
 }
 
 func TestFizzBuzzHandler_NonNumericParameterValues(t *testing.T) {
-	// Préparation de la requête avec les paramètres invalides
+	//  requête avec les paramètres invalides
 	req, err := http.NewRequest(http.MethodGet, "/fizzbuzz?int1=3&int2=invalid&limit=15&str1=fizz&str2=buzz", nil)
 	assert.NoError(t, err)
 
-	// Exécution de la requête avec le gestionnaire FizzBuzzHandler
 	recorder := httptest.NewRecorder()
 	handler := http.HandlerFunc(FizzBuzzHandler)
 	handler.ServeHTTP(recorder, req)
 
-	// Vérification du code de réponse
 	assert.Equal(t, http.StatusBadRequest, recorder.Code)
 }
 

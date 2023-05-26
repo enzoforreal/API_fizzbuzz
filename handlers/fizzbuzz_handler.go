@@ -11,23 +11,21 @@ import (
 
 var statisticsHandler *statistics.StatisticsHandler
 
-// InitStatisticsHandler initialise le gestionnaire de statistiques
+// initialise le gestionnaire de statistiques
 func InitStatisticsHandler() {
 	statisticsHandler = statistics.NewStatisticsHandler()
 }
 
-// SetStatisticsHandler définit l'instance du gestionnaire de statistiques pour le gestionnaire FizzBuzzHandler.
+// définit l'instance du gestionnaire de statistiques pour le gestionnaire FizzBuzzHandler.
 func SetStatisticsHandler(sh *statistics.StatisticsHandler) {
 	statisticsHandler = sh
 }
 
-// GetStatisticsHandler retourne l'instance du gestionnaire de statistiques
+// retourne l'instance du gestionnaire de statistiques
 func GetStatisticsHandler() *statistics.StatisticsHandler {
 	return statisticsHandler
 }
 
-// FizzBuzzHandler gère la requête fizz-buzz
-// et renvoie la réponse JSON appropriée.
 func FizzBuzzHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		w.WriteHeader(http.StatusMethodNotAllowed)

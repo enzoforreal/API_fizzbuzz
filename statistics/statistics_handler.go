@@ -7,14 +7,14 @@ import (
 	"sync"
 )
 
-// StatisticsHandler gère les statistiques des requêtes fizz-buzz
+// gestion  des statistiques des requêtes fizz-buzz
 type StatisticsHandler struct {
 	mu              sync.Mutex
 	mostUsedRequest models.FizzBuzzRequest
 	requestCounts   []models.RequestCountPair
 }
 
-// NewStatisticsHandler crée une nouvelle instance de StatisticsHandler
+// crée une nouvelle instance de StatisticsHandler
 func NewStatisticsHandler() *StatisticsHandler {
 	return &StatisticsHandler{
 		requestCounts: make([]models.RequestCountPair, 0),
@@ -41,7 +41,7 @@ func (sh *StatisticsHandler) GetStatistics(w http.ResponseWriter, r *http.Reques
 	w.Write(jsonResponse)
 }
 
-// UpdateStatistics met à jour les statistiques avec une nouvelle requête fizz-buzz.
+// met à jour les statistiques avec une nouvelle requête fizz-buzz.
 func (sh *StatisticsHandler) UpdateStatistics(request models.FizzBuzzRequest) {
 	sh.mu.Lock()
 	defer sh.mu.Unlock()
@@ -67,7 +67,7 @@ func (sh *StatisticsHandler) UpdateStatistics(request models.FizzBuzzRequest) {
 	}
 }
 
-// getRequestCountPairs retourne les paires RequestCount pour la réponse JSON
+// retourne les paires RequestCount pour la réponse JSON
 func (sh *StatisticsHandler) getRequestCountPairs() []models.RequestCountPair {
 	pairs := make([]models.RequestCountPair, 0, len(sh.requestCounts))
 	for _, pair := range sh.requestCounts {

@@ -5,7 +5,8 @@ import (
 	"strconv"
 )
 
-// GenerateFizzBuzz génère la séquence fizz-buzz
+//	génère la séquence fizz-buzz
+//
 // en utilisant les paramètres de requête donnés.
 func GenerateFizzBuzz(request models.FizzBuzzRequest) models.FizzBuzzResponse {
 	response := models.FizzBuzzResponse{}

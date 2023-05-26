@@ -1,10 +1,6 @@
 package models
 
-//La structure FizzBuzzRequest définit les paramètres de requête pour le fizz-buzz,
-//tels que Int1 (premier entier), Int2 (deuxième entier),
-//Limit (limite de la séquence de nombres),
-//Str1 (première chaîne de remplacement) et Str2 (deuxième chaîne de remplacement).
-
+// définit les paramètres de requête pour le fizz-buzz,
 type FizzBuzzRequest struct {
 	Int1  int    `json:"int1"`
 	Int2  int    `json:"int2"`

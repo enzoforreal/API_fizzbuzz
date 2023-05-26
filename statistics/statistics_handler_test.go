@@ -26,14 +26,11 @@ func TestStatisticsHandler_GetStatistics(t *testing.T) {
 	handler := http.HandlerFunc(statsHandler.GetStatistics)
 	handler.ServeHTTP(recorder, req)
 
-	// Vérification du code de réponse
 	assert.Equal(t, http.StatusOK, recorder.Code, "Code de réponse incorrect")
 
-	// Vérification du corps de la réponse
 	responseBody := recorder.Body.String()
 	assert.NotEmpty(t, responseBody, "Corps de réponse vide")
 
-	// Vérification du JSON de réponse
 	response := models.StatisticsResponse{
 		MostUsedRequest: request1,
 		RequestCount: []models.RequestCountPair{
